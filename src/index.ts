@@ -160,7 +160,7 @@ export default function openaiServerCompactionExtension(pi: ExtensionAPI) {
       if (!notice) return undefined;
       const label = theme.fg("customMessageLabel", compactionNoticeLabel(notice));
       return {
-        render: (width) => [truncateToWidth(label, Math.max(0, width), "")],
+        render: (width) => [truncateToWidth(` ${label}`, Math.max(0, width), "")],
         invalidate: () => {},
       };
     },

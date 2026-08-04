@@ -172,6 +172,7 @@ for (const notice of ["remote-applied", "pi-text-fallback"]) {
   const rendered = component.render(24);
   assert.equal(rendered.length, 1, "notice entry should always render on one line");
   assert.ok(visibleWidth(rendered[0]) <= 24, "notice entry should honor its render width");
+  assert.equal(rendered[0][0], " ", "notice entry should align with Pi's one-column message padding");
 }
 assert.deepEqual(
   noticeColors,
